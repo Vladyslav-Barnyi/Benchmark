@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>BenchmarkExample.DateParseBenchmarks-20241125-102428</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, macOS Sequoia 15.0.1 (24A348) [Darwin 24.0.0]
+Apple M1 Pro, 1 CPU, 8 logical and 8 physical cores
+.NET SDK 8.0.204
+  [Host]     : .NET 8.0.4 (8.0.424.16909), Arm64 RyuJIT AdvSIMD
+  DefaultJob : .NET 8.0.4 (8.0.424.16909), Arm64 RyuJIT AdvSIMD
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method                              </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>Rank</th><th>Gen0</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>GetYearFromSpanWithManualConversionForeach</td><td>3.643 ns</td><td>0.0046 ns</td><td>0.0041 ns</td><td>0.02</td><td>1</td><td>-</td><td>-</td><td>NA</td>
+</tr><tr><td>GetYearFromSpanWithManualConversionFor</td><td>3.645 ns</td><td>0.0077 ns</td><td>0.0065 ns</td><td>0.02</td><td>1</td><td>-</td><td>-</td><td>NA</td>
+</tr><tr><td>GetYearFromSpan</td><td>7.992 ns</td><td>0.0097 ns</td><td>0.0081 ns</td><td>0.05</td><td>2</td><td>-</td><td>-</td><td>NA</td>
+</tr><tr><td>GetYearFromSubstring</td><td>12.469 ns</td><td>0.0180 ns</td><td>0.0150 ns</td><td>0.08</td><td>3</td><td>0.0051</td><td>32 B</td><td>NA</td>
+</tr><tr><td>GetYearFromSplit</td><td>42.052 ns</td><td>0.1272 ns</td><td>0.1062 ns</td><td>0.27</td><td>4</td><td>0.0255</td><td>160 B</td><td>NA</td>
+</tr><tr><td>GetYearFromDateTime</td><td>158.194 ns</td><td>0.2632 ns</td><td>0.2198 ns</td><td>1.00</td><td>5</td><td>-</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>
